@@ -12,6 +12,7 @@ You should just need to run `./build.sh` but if that fails run the following com
 
     git init
     git clone https://github.com/kiwiirc/kiwiirc.git
+    mkdir client-defaults/img
     cd ./kiwiirc/
     yarn install && yarn build
     mv ./dist ../client
