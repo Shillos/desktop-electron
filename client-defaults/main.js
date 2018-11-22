@@ -1,4 +1,4 @@
-const electron = require('electron')
+const electron = require('electron');
 // Module to control application life.
 const app = electron.app;
 const Tray = electron.Tray;
@@ -8,13 +8,13 @@ app.showExitPrompt = true;
 app.commandLine.appendSwitch('explicitly-allowed-ports', '6667,6697');
 const session = electron.session;
 // Module to create native browser window.
-const BrowserWindow = electron.BrowserWindow
+const BrowserWindow = electron.BrowserWindow;
 const ipcMain = electron.ipcMain;
 var openUrl = require("openurl");
 var os = require("os");
 var preventQuit = true;
-const path = require('path')
-const url = require('url')
+const path = require('path');
+const url = require('url');
 const notify = require("node-notifier");
 
 var yummy_cookies ={};
@@ -70,8 +70,8 @@ mainWindow.on('close', function(e) { //   <---- Catch close event
       }, function (response) {
           if (response === 0) { // Runs the following if 'Yes' is clicked
               preventQuit=false;
-              app.showExitPrompt = false
-              mainWindow.close()
+              app.showExitPrompt = false;
+              mainWindow.close();
               app.quit();
           }
       })
@@ -89,7 +89,7 @@ mainWindow.on('close', function(e) { //   <---- Catch close event
     // Dereference the window object, usually you would store windows
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
-    mainWindow = null
+    mainWindow = null;
     app.quit();
     /*e.returnValue = false;  // this will *prevent* the closing no matter what value is passed
     mainWindow.hide();
@@ -109,15 +109,15 @@ app.on('ready', function(){
     },
     {
       label: 'Show/Hide Window',
-      click: function(){ mainWindow.isVisible() ? mainWindow.hide() : mainWindow.show() }
+      click: function(){ mainWindow.isVisible() ? mainWindow.hide() : mainWindow.show(); }
     }
   ]);
   tray.on('click', () => {
-    mainWindow.isVisible() ? mainWindow.hide() : mainWindow.show()
+    mainWindow.isVisible() ? mainWindow.hide() : mainWindow.show();
   })
 
-  tray.setToolTip('KiwiIRC')
-  tray.setContextMenu(contextMenu)
+  tray.setToolTip('KiwiIRC');
+  tray.setContextMenu(contextMenu);
   createWindow();
 });
 
@@ -129,7 +129,7 @@ app.on('activate', function () {
   // On OS X it's common to re-create a window in the app when the
   // dock icon is clicked and there are no other windows open.
   if (mainWindow === null) {
-    createWindow()
+    createWindow();
   }
 })
 
