@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 set -x
-git init
-git https://github.com/kiwiirc/kiwiirc.git
+git submodule init
+git submodule update
 cd ./kiwiirc/
 yarn install && yarn build
 mv ./dist ../client
