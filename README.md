@@ -10,8 +10,8 @@ Before you can build you will need to [install yarn](https://yarnpkg.com/lang/en
 # Building
 You should just need to run `./build.sh` but if that fails run the following commands:
 
-    git init
-    git clone https://github.com/kiwiirc/kiwiirc.git
+    git submodule init
+    git submodule update
     cd ./kiwiirc/
     yarn install && yarn build
     mv ./dist ../client
